@@ -5,8 +5,9 @@ import {
 } from 'react-router-dom'
 
 import Home from './pages/Home'
-import Movimentacoes from './pages/Movimentacoes'
+import Login from './pages/Login'
 import Header from './elements/Header'
+import Movimentacoes from './pages/Movimentacoes'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <div>
         <Header />
         <Route path='/' exact component={Home} />
+        <Route path='/login' exact component={Login} />
         <Route path='/movimentacoes/:data' exact component={Movimentacoes} />
       </div>
     </Router>

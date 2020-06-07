@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import Rest from '../../utils/rest'
 
@@ -12,6 +12,10 @@ const Meses = () => {
 
   if (data.loading) {
     return <span>Carregando...</span>
+  }
+
+  if (data.code === 401) {
+    return <Redirect to='/login' />
   }
 
   if (Object.keys(data.data).length > 0) {
